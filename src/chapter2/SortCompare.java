@@ -3,20 +3,30 @@ package chapter2;
 
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
+import edu.princeton.cs.algs4.Stopwatch;
+
 
 public class SortCompare {
 	public static double time(String alg, Comparable[] a) {
+		Stopwatch timer = new Stopwatch();
 		if (alg.equals("Insertion")) InsertionSort.sort(a);
 		if (alg.equals("Selection")) SelectionSort.sort(a);
 		if (alg.equals("Shell")) Shell.sort(a);
 		//if (alg.equals("Merge")) Merge.sort(a);
 		//if (alg.equals("Quick")) Quick.sort(a);
 		//if (alg.equals("Heap")) Heap.sort(a);
-		return 2.0;
+		return timer.elapsedTime();
 	}
 	
+	
+	/**
+	 * 将T个长度为N的数组排序
+	 * @param alg 排序名称
+	 * @param N 数组长度
+	 * @param T 排序数组个数
+	 * @return 数组排序所用的时间
+	 */
 	public static double timeRandomInput(String alg, int N, int T) {
-		// 将T个长度为N的数组排序
 		double total = 0.0;
 		Double[] a = new Double[N];
 		for (int t = 0; t < T; t++) {

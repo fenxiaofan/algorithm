@@ -1,5 +1,8 @@
 package chapter2;
 
+
+import static chapter2.Example.less;
+import static chapter2.Example.exch;
 /**
  * 选择排序
  * 
@@ -14,9 +17,9 @@ public class SelectionSort {
 			int min = i;
 			for (int j = i+1; j < N; j++) {
 				//比较i和j的大小，取最小值为min
-				if( Example.less(a[j], a[i])) {
+				if( less(a[j], a[i])) {
 					min = j;
-					Example.exch(a, i, min);
+					exch(a, i, min);
 				}			
 			}
 		}

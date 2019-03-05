@@ -1,5 +1,8 @@
 package chapter2;
 
+import static chapter2.Example.less;
+import static chapter2.Example.exch;
+
 /**
  * 插入排序
  * 时间复杂度o(n^2)
@@ -13,8 +16,8 @@ public class InsertionSort {
 		int N = a.length;
 		for (int i = 0; i< N; i++) {
 			//将a[i]插入到a[i-1]、a[i-2]...a[0]中
-			for ( int j = i; j >0 && Example.less(a[j], a[j-1]); j--) {
-				Example.exch(a, j, j-1);
+			for ( int j = i; j >0 && less(a[j], a[j-1]); j--) {
+				exch(a, j, j-1);
 			}
 		}
 	}
